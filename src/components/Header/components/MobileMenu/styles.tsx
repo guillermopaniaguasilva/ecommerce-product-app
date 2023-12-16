@@ -11,7 +11,7 @@ export const Overlay = styled.div<{
   background: rgba(0, 0, 0, 0.75);
   opacity: ${({ $isOpen }) => ($isOpen ? '1' : '0')};
   visibility: ${({ $isOpen }) => ($isOpen ? 'visible' : 'hidden')};
-  transition: opacity 0.2s ease-in-out;
+  transition: opacity 250ms ease-in-out, visibility 1s ease-in-out;
 `;
 
 export const Content = styled.div<{
@@ -24,9 +24,21 @@ export const Content = styled.div<{
   height: 100%;
   background: #fff;
   padding: 20px;
-  transform: ${({ $isOpen }) =>
-    $isOpen ? 'translateX(0)' : 'translateX(-100%)'};
-  transition: transform 0.5s ease-in-out;
+
+  &.content-enter {
+    transform: translateX(-100%);
+  }
+  &.content-enter-active {
+    transform: translateX(0);
+    transition: transform 250ms ease-in-out;
+  }
+  &.content-exit {
+    transform: translateX(0);
+  }
+  &.content-exit-active {
+    transform: translateX(-100%);
+    transition: transform 250ms ease-in-out;
+  }
 `;
 
 export const Icon = styled.img`
