@@ -1,13 +1,5 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-`;
-
 export const Overlay = styled.div<{
   $isOpen: boolean;
 }>`
@@ -18,6 +10,8 @@ export const Overlay = styled.div<{
   height: 100%;
   background: rgba(0, 0, 0, 0.75);
   opacity: ${({ $isOpen }) => ($isOpen ? '1' : '0')};
+  visibility: ${({ $isOpen }) => ($isOpen ? 'visible' : 'hidden')};
+  transition: opacity 0.2s ease-in-out;
 `;
 
 export const Content = styled.div<{

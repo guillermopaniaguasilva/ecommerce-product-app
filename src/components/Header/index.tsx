@@ -1,5 +1,5 @@
 import logo from 'assets/images/logo.svg';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Avatar from './components/Avatar';
 import HamburgerIcon from './components/HamburgerIcon';
 import MiniCart from './components/MiniCart';
@@ -8,10 +8,6 @@ import { Logo } from './styles';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    console.log(isMobileMenuOpen);
-  }, [isMobileMenuOpen]);
 
   const handleMenuToggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -28,7 +24,7 @@ export default function Header() {
     >
       <div className="d-flex align-items-center">
         <HamburgerIcon onOpen={handleMenuToggle} />
-        {<MobileMenu isOpen={isMobileMenuOpen} onClose={handleMenuToggle} />}
+        <MobileMenu isOpen={isMobileMenuOpen} onClose={handleMenuToggle} />
         <Logo src={logo} />
       </div>
       <div>
