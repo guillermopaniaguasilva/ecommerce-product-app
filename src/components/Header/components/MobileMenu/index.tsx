@@ -14,7 +14,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const contentRef = useRef<HTMLDivElement>(null);
 
   return (
-    <Overlay $isOpen={isOpen} onClick={onClose}>
+    <Overlay $isOpen={isOpen}>
       <CSSTransition
         in={isOpen}
         nodeRef={contentRef}
