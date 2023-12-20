@@ -8,10 +8,9 @@ type MobileMenuProps = {
   onClose: () => void;
 };
 
-const menuOptions = ['Collections', 'Men', 'Women', 'About', 'Contact'];
-
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const contentRef = useRef<HTMLDivElement>(null);
+  const menuOptions = ['Collections', 'Men', 'Women', 'About', 'Contact'];
 
   return (
     <Overlay $isOpen={isOpen}>
