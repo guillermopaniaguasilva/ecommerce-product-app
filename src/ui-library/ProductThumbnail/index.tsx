@@ -20,11 +20,11 @@ export default function ProductThumbnail({
   quantity,
   onDelete,
 }: ProductThumbnailProps) {
-  const { title, thumbnail, unitPrice } = product;
+  const { title, thumbnails, unitPrice } = product;
 
   return (
     <Container>
-      <Thumbnail src={thumbnail} />
+      <Thumbnail src={thumbnails[0]} />
       <div className="me-3">
         <Title>{title}</Title>
         <UnitPrice>
