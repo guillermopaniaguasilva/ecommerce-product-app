@@ -14,7 +14,7 @@ export default function Header() {
   };
 
   const style = {
-    padding: '20px 0 28px 0',
+    padding: '20px 24px 28px 24px',
   };
 
   return (

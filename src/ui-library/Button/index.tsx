@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react';
 import { StyledButton } from './styles';
 
 type ButtonProps = {
@@ -5,6 +6,7 @@ type ButtonProps = {
   iconAlt?: string;
   withShadow?: boolean;
   width?: number;
+  style?: CSSProperties;
   children: React.ReactNode;
 };
 
@@ -13,9 +15,10 @@ export default function Button({
   withShadow,
   width,
   children,
+  style,
 }: ButtonProps) {
   return (
-    <StyledButton $width={width} $withShadow={!!withShadow}>
+    <StyledButton style={style} $width={width} $withShadow={!!withShadow}>
       <div className="d-flex justify-content-center align-items-center">
         {icon ? icon : null}
         <span style={{ marginLeft: '16px' }}>{children}</span>

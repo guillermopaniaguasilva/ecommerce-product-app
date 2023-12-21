@@ -12,7 +12,7 @@ import {
 type ProductThumbnailProps = {
   product: Product;
   quantity: number;
-  onDelete: () => void;
+  onDelete: (_: Product) => void;
 };
 
 export default function ProductThumbnail({
@@ -42,7 +42,7 @@ export default function ProductThumbnail({
       <TrashIcon
         className="align-self-center"
         src={trashIcon}
-        onClick={onDelete}
+        onClick={() => onDelete(product)}
       />
     </Container>
   );

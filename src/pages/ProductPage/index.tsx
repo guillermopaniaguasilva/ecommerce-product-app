@@ -1,3 +1,5 @@
+import { StyledMain } from './styles';
+
 export default function ProductPage() {
-  return <div>product page</div>;
+  return <StyledMain></StyledMain>;
 }

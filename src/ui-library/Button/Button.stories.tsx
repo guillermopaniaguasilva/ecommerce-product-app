@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import Button from '.';
-import WhiteCartIcon from '../../assets/icons/WhiteCart';
+import MiniCartIcon from '../../assets/icons/MiniCartIcon';
 
 const meta = {
   title: 'UI Library/Button',
@@ -26,7 +26,7 @@ export const WithOutIcon: Story = {
 export const WithIcon: Story = (args) => <Button {...args} />;
 WithIcon.args = {
   width: 327,
-  icon: <WhiteCartIcon />,
+  icon: <MiniCartIcon color="#FFFFFF" />,
   children: 'Button',
 };
 
