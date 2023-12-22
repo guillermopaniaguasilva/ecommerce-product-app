@@ -1,20 +1,20 @@
-import { Product } from 'types/index';
+import { Product, ProductInCart } from 'types/index';
 import { StoreApi, UseBoundStore, create } from 'zustand';
 
 interface CartState {
-  cart: Product[];
-  addToCart: (_: Product) => void;
+  cart: ProductInCart[];
+  addToCart: (product: Product, quantity: number) => void;
   deleteFromCart: (_: Product) => void;
 }
 
 export const useCartStore = create<CartState>()((set) => ({
   cart: [],
-  addToCart: (product: Product) =>
-    set((state) => ({ cart: [...state.cart, product] })),
+  addToCart: (product: Product, quantity: number) =>
+    set((state) => ({ cart: [...state.cart, { product, quantity }] })),
   deleteFromCart: (product: Product) =>
     set((state) => ({
       cart: state.cart.filter(
-        (productInCart) => productInCart.title !== product.title
+        (productInCart) => productInCart.product.title !== product.title
       ),
     })),
 }));

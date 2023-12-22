@@ -7,6 +7,7 @@ type ButtonProps = {
   withShadow?: boolean;
   width?: number;
   style?: CSSProperties;
+  onClick: () => void;
   children: React.ReactNode;
 };
 
@@ -16,9 +17,15 @@ export default function Button({
   width,
   children,
   style,
+  onClick,
 }: ButtonProps) {
   return (
-    <StyledButton style={style} $width={width} $withShadow={!!withShadow}>
+    <StyledButton
+      onClick={onClick}
+      style={style}
+      $width={width}
+      $withShadow={!!withShadow}
+    >
       <div className="d-flex justify-content-center align-items-center">
         {icon ? icon : null}
         <span style={{ marginLeft: '16px' }}>{children}</span>

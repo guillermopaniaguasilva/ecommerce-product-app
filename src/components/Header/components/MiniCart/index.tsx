@@ -32,14 +32,16 @@ export default function MiniCart() {
     <Container className="d-flex flex-column">
       <Heading className="border-bottom">Cart</Heading>
       <ProductsContainer>
-        {cart.map((product) => (
+        {cart.map((productInCart) => (
           <ProductThumbnail
-            product={product}
+            product={productInCart.product}
             onDelete={deleteFromCart}
-            quantity={1}
+            quantity={productInCart.quantity}
           />
         ))}
-        <Button style={{ marginTop: '24px' }}>Checkout</Button>
+        <Button onClick={() => undefined} style={{ marginTop: '24px' }}>
+          Checkout
+        </Button>
       </ProductsContainer>
     </Container>
   );

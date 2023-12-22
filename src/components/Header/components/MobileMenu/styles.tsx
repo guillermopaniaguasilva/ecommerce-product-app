@@ -12,7 +12,7 @@ export const Overlay = styled.div<{
   opacity: ${({ $isOpen }) => ($isOpen ? '1' : '0')};
   visibility: ${({ $isOpen }) => ($isOpen ? 'visible' : 'hidden')};
   transition: opacity 250ms ease-in-out, visibility 1s ease-in-out;
-  z-index: 1;
+  z-index: 10;
 `;
 
 export const Content = styled.div<{

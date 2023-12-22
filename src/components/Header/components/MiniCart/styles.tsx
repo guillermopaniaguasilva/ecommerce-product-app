@@ -22,6 +22,7 @@ export const Container = styled.div`
   position: absolute;
   right: -62px;
   top: 60px;
+  z-index: 10;
 `;
 
 export const Heading = styled.h4`

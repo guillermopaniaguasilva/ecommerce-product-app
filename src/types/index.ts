@@ -5,3 +5,8 @@ export type Product = {
   images: string[];
   thumbnails: string[];
 };
+
+export type ProductInCart = {
+  product: Product;
+  quantity: number;
+};
